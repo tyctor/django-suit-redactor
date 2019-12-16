@@ -2,6 +2,7 @@
 from django.forms import Textarea
 from django.utils.safestring import mark_safe
 from django.contrib.staticfiles.templatetags.staticfiles import static
+from django.conf rmport settings
 
 try:
     import json
@@ -11,12 +12,13 @@ except ImportError:
 
 class RedactorWidget(Textarea):
     class Media:
+        extra = '' if settings.DEBUG else '.min'
         css = {
             'all': (static('suit-redactor/redactor/redactor.css'),)
         }
         js = (
             static('suit-redactor/redactor/ensure.jquery.js'),
-            static('suit-redactor/redactor/redactor.min.js'),
+            static('suit-redactor/redactor/redactor%s.js' % extra),
         )
 
     def __init__(self, attrs=None, editor_options={}):

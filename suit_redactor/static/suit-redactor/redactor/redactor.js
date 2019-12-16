@@ -2458,7 +2458,7 @@ var RLANG = {
 		{
 			if (typeof this.savedSel !== 'undefined' && this.savedSel !== null && this.savedSelObj !== null && this.savedSel[0].tagName !== 'BODY')
 			{
-				if (this.opts.iframe === false && $(this.savedSel[0]).closest('.redactor_editor').size() == 0)
+				if (this.opts.iframe === false && $(this.savedSel[0]).closest('.redactor_editor').length == 0)
 				{
 					this.$editor.focus();
 				}
