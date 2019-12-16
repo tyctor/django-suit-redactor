@@ -2,7 +2,7 @@
 from django.forms import Textarea
 from django.utils.safestring import mark_safe
 from django.contrib.staticfiles.templatetags.staticfiles import static
-from django.conf rmport settings
+from django.conf import settings
 
 try:
     import json
